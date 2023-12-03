@@ -25,7 +25,7 @@ if (typeof editor === 'undefined') {
 
 // Check if service workers are supported
 if ('serviceWorker' in navigator) {
-  // register workbox service worker
+  // register workbox service worker // changed the name to service-worker.js for ease of understanding
   const workboxSW = new Workbox('./service-worker.js');
   workboxSW.register();
 } else {

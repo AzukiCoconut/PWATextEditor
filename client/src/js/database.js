@@ -12,26 +12,29 @@ const initdb = async () =>
     },
   });
 
-// TODO: Add logic to a method that accepts some content and adds it to the database
+// Method for updating content to the IndexDB
 export const putDb = async (content) => {
-  console.log('ADD to the database');
+  console.log('PUT to the database');
   const jateDB = await openDB('jate', 1);
   const tx = jateDB.transaction('jate', 'readwrite');
   const store = tx.objectStore('jate');
+  // always update the first element in the DB.
   const request = store.put({ id: 1, text: content });
   const result = await request;
   console.log('Data saved to the database', result);
 };
 
-// TODO: Add logic for a method that gets all the content from the database
+// Method to get content from IndexDB
 export const getDb = async () => {
   console.log('GET all from the database');
   const jateDB = await openDB('jate', 1);
   const tx = jateDB.transaction('jate', 'readonly');
   const store = tx.objectStore('jate');
+  // Technically, only need to get the first element but since there is only one to begin with...
   const request = store.getAll();
   const result = await request;
   console.log('result.value', result[0].text);
+  // Only return the text
   return result[0].text;
 };
 
