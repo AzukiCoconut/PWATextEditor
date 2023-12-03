@@ -11,8 +11,9 @@ This project is about learning to use Progressive Web Applications (PWA). The co
 ## Usage
 
 Below is a screenshot of the deployed site.
+![Screenshot of the completed PWA Text Editor](/pwatexteditor.onrender.com_.png)
 
-This is the link to the deployed application:
+This is the link to the deployed application: https://pwatexteditor.onrender.com/
 
 ## Credits
 
